@@ -18,10 +18,12 @@
 export const scramble = (word: string, otherWord: string): boolean => {
   const otherWordArray = otherWord.split('')
 
-  const initialState = { word, otherWord }
+  const initialState: { word: string, otherWord: string, hasFoundLetters: boolean[] } =
+      { word, otherWord, hasFoundLetters: [] }
 
   otherWordArray.reduce((state, nextLetter) => {
-    state.word.includes(nextLetter)
+    state.hasFoundLetters.push(state.word.includes(nextLetter))
+    state.word = otherWord.split('').filter(match => match !== state.word)
   }, initialState)
 
   return otherWordArray.every(letter => {
