@@ -16,5 +16,6 @@
  * 
  */
 export const scramble = (word: string, otherWord: string): boolean => {
-  return false;
+  return word === otherWord
 }
+
