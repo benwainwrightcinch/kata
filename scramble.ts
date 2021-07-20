@@ -16,6 +16,13 @@
  * 
  */
 export const scramble = (word: string, otherWord: string): boolean => {
+  const otherWordArray = otherWord.split('')
+
+  const matchingCharacters = otherWordArray.map(letter => {
+    return word.includes(letter)
+  })
+  matchingCharacters.filter()
+
   return word.includes(otherWord)
 }
 
