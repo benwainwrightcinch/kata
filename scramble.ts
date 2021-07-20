@@ -18,11 +18,14 @@
 export const scramble = (word: string, otherWord: string): boolean => {
   const otherWordArray = otherWord.split('')
 
-  const matchingCharacters = otherWordArray.map(letter => {
+  const initialState = { word, otherWord }
+
+  otherWordArray.reduce((state, nextLetter) => {
+    state.word.includes(nextLetter)
+  }, initialState)
+
+  return otherWordArray.every(letter => {
     return word.includes(letter)
   })
-  matchingCharacters.filter()
-
-  return word.includes(otherWord)
 }
 

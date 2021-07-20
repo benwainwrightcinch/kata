@@ -16,4 +16,8 @@ describe("scramble", () => {
   it("should return true when all of the characters of the second arg are contained within the first", () => {
     expect(scramble('rkqodlw', 'world')).toBeTruthy()
   });
+
+  it("should return false when entire second arg is not in first arg", () => {
+    expect(scramble('o', 'ooo')).toBeFalsy()
+  });
 });
